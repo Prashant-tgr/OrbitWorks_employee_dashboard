@@ -74,14 +74,6 @@ The assistant sends the latest conversation context to Gemini and retries tempor
 
 This project is a frontend application, so a `VITE_` environment variable is included in the browser bundle. Do not use this setup for a production application that requires a private API key. For production, move Gemini requests to a backend or serverless function and keep the key in server-side environment variables.
 
-## Deployment on Vercel
-
-1. Push the project to a Git repository.
-2. Import the repository into Vercel.
-3. Add `VITE_GEMINI_API_KEY` under Vercel Project Settings > Environment Variables.
-4. Deploy the project.
-
-The included `vercel.json` rewrites client-side routes such as `/dashboard`, `/assistant`, and `/analytics` to `index.html`, preventing 404 errors when those routes are reloaded.
 
 ## Project Structure
 
