@@ -1,0 +1,139 @@
+.retry-status {
+  color: #9a73d8 !important;
+  font-weight: 600;
+}
+.composer button:disabled,
+.composer input:disabled,
+.suggestions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.voice-status {
+  margin: 0 18px 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+}
+.voice-status p {
+  margin: 0;
+}
+.voice-status span {
+  width: 8px;
+  height: 8px;
+  background: #938ba8;
+  border-radius: 50%;
+}
+.voice-status.listening {
+  background: #f0ecff;
+  color: var(--purple);
+  font-weight: 600;
+}
+.voice-status.listening span {
+  background: var(--purple);
+  animation: voicePulse 1.2s ease-out infinite;
+}
+.microphone.listening {
+  background: var(--purple);
+  color: #fff;
+  animation: voicePulse 1.2s ease-out infinite;
+}
+.interactive-chart {
+  overflow: hidden;
+}
+.chart-selection {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0 0 4px;
+  text-align: center;
+}
+.chart-selection b {
+  color: var(--purple);
+}
+.legend button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--muted);
+  font: 10px inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+.legend button:hover,
+.legend button.selected {
+  color: var(--purple);
+  font-weight: 700;
+}
+.legend button b {
+  margin-left: auto;
+  color: var(--text);
+}
+.chart-bar {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transition:
+    filter 180ms ease,
+    transform 180ms ease;
+}
+.chart-bar.selected {
+  filter: drop-shadow(0 5px 5px #7659ea55);
+  transform: scaleY(1.035);
+}
+.pie-card svg,
+.pie-card svg * {
+  outline: none !important;
+}
+
+.pie-card .recharts-sector {
+  cursor: pointer;
+  transition:
+    filter 180ms ease,
+    opacity 180ms ease;
+}
+
+.pie-card .recharts-sector:focus {
+  outline: none !important;
+}
+
+.legend button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--muted);
+  font: 10px inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.legend button:hover,
+.legend button.selected {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.legend button b {
+  margin-left: auto;
+  color: var(--text);
+}
+
+@keyframes voicePulse {
+  0% {
+    box-shadow: 0 0 0 0 #7659ea66;
+  }
+  70% {
+    box-shadow: 0 0 0 9px #7659ea00;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #7659ea00;
+  }
+}

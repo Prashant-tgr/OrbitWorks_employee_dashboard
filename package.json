@@ -1,0 +1,8 @@
+{
+  "name": "employee-assistant-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "vite", "preview": "vite preview" },
+  "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "react": "latest", "react-dom": "latest", "lucide-react": "latest", "recharts": "latest" },
+  "devDependencies": {}
+}
