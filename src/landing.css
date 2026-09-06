@@ -164,6 +164,24 @@
   place-items: center;
   border-radius: 9px;
 }
+@media (max-width: 760px) {
+  .feature-section {
+    display: block;
+    padding: 76px 22px;
+  }
+  .feature-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .landing-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .landing-features article {
+    min-height: 142px;
+    padding: 18px;
+  }
+}
 .landing-features h3 {
   font-size: 14px;
   margin: 14px 0 6px;
@@ -253,7 +271,7 @@
 
   .landing-hero {
     min-height: 0;
-    padding: 64px 20px 72px;
+    padding: 58px 22px 78px;
   }
 
   .landing-hero h1 {
@@ -271,7 +289,7 @@
     right: auto;
     width: min(78vw, 300px);
     height: min(78vw, 300px);
-    margin: 56px auto 0;
+    margin: 48px auto 0;
   }
 
   .landing-orb > b {
@@ -290,6 +308,25 @@
   .landing-banner h2 {
     font-size: 28px;
   }
+
+  .feature-section {
+    display: block;
+    padding: 76px 22px;
+  }
+
+  .feature-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .landing-features {
+    gap: 14px;
+  }
+
+  .landing-features article {
+    min-height: 142px;
+    padding: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -301,6 +338,10 @@
     font-size: 15px;
   }
 
+  .landing-nav {
+    padding: 16px;
+  }
+
   .landing-cta {
     font-size: 11px;
   }
@@ -310,6 +351,16 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+  }
+
+  .landing-hero h1 {
+    font-size: 46px;
+    line-height: 1.02;
+  }
+
+  .landing-hero > p {
+    font-size: 14px;
+    line-height: 1.65;
   }
 
   .landing-hero .primary {
@@ -366,8 +417,6 @@
   color: #ede9ff;
 }
 
-
-
 .feature-section {
   max-width: 1100px;
   padding: 100px 28px;
@@ -411,15 +460,12 @@
   color: #777284;
 }
 
-
 @media (max-width: 700px) {
-
   .feature-section {
     grid-template-columns: 1fr;
     padding: 60px 18px;
     gap: 30px;
   }
-
 }
 
 @media (max-width: 760px) {

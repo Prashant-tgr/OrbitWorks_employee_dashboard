@@ -265,7 +265,7 @@
   width: calc(100% - 76px);
 }
 .topbar {
-  height: 88px;
+  height: 104px;
   border-bottom: 1px solid var(--line);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   display: flex;
@@ -296,6 +296,28 @@ h1 + p {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.topbar .icon-button {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+}
+.topbar .icon-button svg {
+  width: 23px;
+  height: 23px;
+}
+.topbar .avatar {
+  width: 42px;
+  height: 42px;
+  font-size: 12px;
+  flex: 0 0 42px;
+}
+.topbar .theme-switch span {
+  padding: 7px;
+}
+.topbar .theme-switch span svg {
+  width: 21px;
+  height: 21px;
 }
 .icon-button,
 .close-menu,
@@ -338,8 +360,9 @@ h1 + p {
   font-weight: 600;
 }
 .avatar {
-  width: 60px;
+  width: 31px;
   height: 31px;
+  flex: 0 0 31px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -350,11 +373,13 @@ h1 + p {
 .avatar.large {
   width: 52px;
   height: 52px;
+  flex: 0 0 52px;
   font-size: 14px;
 }
 .avatar.xl {
   width: 60px;
   height: 60px;
+  flex: 0 0 60px;
   font-size: 16px;
 }
 .mobile-menu {
@@ -749,6 +774,27 @@ h1 + p {
 
 /* TABLET + MOBILE */
 @media (max-width: 1100px) {
+  .topbar {
+    height: 96px !important;
+  }
+
+  .topbar .icon-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .topbar .icon-button svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .topbar .avatar {
+    width: 46px;
+    height: 46px;
+    font-size: 13px;
+    flex-basis: 46px;
+  }
+
   .sidebar {
     position: fixed !important;
     left: 12px !important;
@@ -757,9 +803,9 @@ h1 + p {
     bottom: 12px !important;
 
     width: auto !important;
-    height: 68px !important;
+    height: 96px !important;
 
-    padding: 5px !important;
+    padding: 9px !important;
 
     border: 1px solid var(--line) !important;
     border-radius: 18px !important;
@@ -783,7 +829,7 @@ h1 + p {
     display: grid !important;
     grid-template-columns: repeat(6, 1fr) !important;
 
-    gap: 3px !important;
+    gap: 8px !important;
   }
 
   .sidebar nav button {
@@ -791,14 +837,14 @@ h1 + p {
     width: 100% !important;
     height: 100% !important;
 
-    padding: 5px 2px !important;
+    padding: 9px 3px !important;
 
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
 
-    gap: 3px !important;
+    gap: 8px !important;
 
     border-radius: 12px !important;
 
@@ -810,11 +856,18 @@ h1 + p {
     opacity: 1 !important;
     pointer-events: auto !important;
 
-    font-size: 9px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
 
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .sidebar nav button svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex: 0 0 24px !important;
   }
 
   .sidebar nav button.active {
@@ -823,8 +876,7 @@ h1 + p {
   }
 
   .sidebar nav button em {
-    position: absolute !important;
-    opacity: 1 !important;
+    display: none !important;
   }
 
   /* REMOVE DESKTOP OFFSET */
@@ -832,7 +884,7 @@ h1 + p {
     margin-left: 0 !important;
     width: 100% !important;
 
-    padding-bottom: 95px !important;
+    padding-bottom: 126px !important;
   }
 
   /* FLUID CONTENT */
@@ -843,13 +895,15 @@ h1 + p {
 
     padding-left: clamp(15px, 4vw, 32px) !important;
     padding-right: clamp(15px, 4vw, 32px) !important;
+    padding-top: 32px !important;
+    padding-bottom: 42px !important;
   }
 
   /* STATS */
   .stats {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 12px !important;
+    gap: 16px !important;
   }
 
   /* STACK CONTENT */
@@ -873,28 +927,83 @@ h1 + p {
     min-width: 0 !important;
     box-sizing: border-box !important;
   }
+  .stat {
+    min-height: 82px !important;
+    padding: 18px !important;
+  }
+  .chart-card,
+  .today,
+  .team-card,
+  .pie-card {
+    padding: 24px !important;
+  }
+  .overview-grid,
+  .analytics-grid {
+    gap: 20px !important;
+  }
 }
 
 /* PHONE */
 @media (max-width: 599px) {
+  .topbar {
+    height: 88px !important;
+  }
+
+  .topbar .icon-button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .topbar .icon-button svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .topbar .avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 12px;
+    flex-basis: 42px;
+  }
+
   .sidebar {
     left: 8px !important;
     right: 8px !important;
     bottom: 8px !important;
-    height: 64px !important;
+    height: 92px !important;
     border-radius: 16px !important;
   }
 
   .main {
-    padding-bottom: 82px !important;
+    padding-bottom: 122px !important;
   }
 
   .content {
-    padding: 16px 14px 25px !important;
+    padding: 22px 16px 38px !important;
   }
 
   .stats {
-    gap: 8px !important;
+    gap: 12px !important;
+  }
+
+  .stat {
+    min-height: 78px !important;
+    padding: 14px !important;
+  }
+
+  .stat b {
+    font-size: 18px !important;
+  }
+
+  .stat span {
+    font-size: 10px !important;
+  }
+
+  .chart-card,
+  .today,
+  .team-card,
+  .pie-card {
+    padding: 20px !important;
   }
 
   .people-row {

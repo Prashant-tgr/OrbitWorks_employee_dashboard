@@ -1,5 +1,5 @@
 .chat-page {
-  height: calc(100vh - 88px);
+  height: calc(100vh - 104px);
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
@@ -227,6 +227,14 @@
 }
 .selectbox select {
   appearance: none;
+}
+.selectbox option {
+  background: #fff;
+  color: #19182c;
+}
+[data-theme="dark"] .selectbox option {
+  background: #20202b;
+  color: #f5f4fc;
 }
 .result-count {
   font-size: 12px;
@@ -597,6 +605,10 @@
    ========================================================= */
 
 @media (max-width: 599px) {
+  .chat-page {
+    height: calc(100vh - 88px);
+  }
+
   .sidebar {
     left: 8px !important;
     right: 8px !important;

@@ -17,10 +17,7 @@ import { employees } from "../data/employees";
 
 export function Avatar({ person = employees[0], size = "" }) {
   return (
-    <div
-      className={`avatar ${size}`}
-      style={{ background: person.color }}
-    >
+    <div className={`avatar ${size}`} style={{ background: person.color }}>
       {person.initials}
     </div>
   );
@@ -35,13 +32,7 @@ const links = [
   ["/settings", "Settings", Settings],
 ];
 
-export default function Layout({
-  children,
-  path,
-  navigate,
-  theme,
-  setTheme,
-}) {
+export default function Layout({ children, path, navigate, theme, setTheme }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -69,12 +60,11 @@ export default function Layout({
           {links.map(([href, label, Icon]) => (
             <button
               key={href}
-              
+              className={path === href ? "active" : ""}
               onClick={() => {
                 navigate(href);
                 setOpen(false);
               }}
-              
             >
               <Icon size={19} />
 
@@ -86,8 +76,6 @@ export default function Layout({
         </nav>
 
         <div className="sidebar-bottom">
-          
-
           <div className="workspace">
             <div className="workspace-logo">O</div>
 
@@ -116,16 +104,13 @@ export default function Layout({
 
           <div className="top-actions">
             {/* Mobile/tablet theme control */}
-            
 
             <button
               className="theme-switch"
-              onClick={() =>
-                setTheme(theme === "dark" ? "light" : "dark")
-              }
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
               <span>
-                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
               </span>
 
               <b>{theme === "dark" ? "Dark" : "Light"} mode</b>
@@ -133,16 +118,13 @@ export default function Layout({
               <i className={theme === "dark" ? "on" : ""} />
             </button>
 
-            
             <button className="icon-button">
               <Bell size={19} />
             </button>
 
             <Avatar />
 
-            <span className="user-mini">
-              Olivia Chen
-            </span>
+            <span className="user-mini">Olivia Chen</span>
           </div>
         </header>
 
