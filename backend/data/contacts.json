@@ -1,0 +1,20 @@
+[
+  {
+    "id": "d08f2d26-6d8a-4d50-9df2-97e0bb4be337",
+    "name": "David Miller",
+    "email": "dmiller@prismacorp.com",
+    "phone": "+1 (555) 987-6543",
+    "subject": "Security & Compliance question",
+    "message": "Can you provide documentation regarding SOC2 Type II and GDPR data retention policies?",
+    "createdAt": "2026-09-13T04:31:21.033Z"
+  },
+  {
+    "id": "86a29ad7-5632-4b8c-a3a5-2560d75ce246",
+    "name": "Sarah Connor",
+    "email": "sarah.connor@skytech.io",
+    "phone": "+1 (555) 234-5678",
+    "subject": "Enterprise Integration Inquiry",
+    "message": "Hello, our team wants to learn more about deploying Orbit AI across 250 engineers.",
+    "createdAt": "2026-09-14T04:31:21.033Z"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "6304f9fe-b833-4884-8953-9a8cefae393a",
+    "name": "Jon Snow",
+    "email": "jon@example.com",
+    "phone": "9311520568",
+    "serviceRequired": "AI Integration",
+    "budget": "$5,000 - $15,000",
+    "message": "To build the Automation",
+    "createdAt": "2026-09-15T05:03:09.132Z"
+  },
+  {
+    "id": "01127455-d5e7-460a-80a0-dd198e948a86",
+    "name": "Enterprise Client",
+    "email": "client@enterprise.com",
+    "phone": "9998887777",
+    "serviceRequired": "AI Integration",
+    "budget": "$15,000 - $50,000",
+    "message": "Need help building AI pipelines.",
+    "createdAt": "2026-09-15T04:44:01.969Z"
+  },
+  {
+    "id": "16b26993-baae-4736-9abf-80fd266c46d4",
+    "name": "Enterprise Client",
+    "email": "client@enterprise.com",
+    "phone": "9998887777",
+    "serviceRequired": "AI Integration",
+    "budget": "$15,000 - $50,000",
+    "message": "Need help building AI pipelines.",
+    "createdAt": "2026-09-15T04:35:46.965Z"
+  },
+  {
+    "id": "74e67719-cc24-45fa-805f-71cb8abd77d9",
+    "name": "Rachel Zane",
+    "email": "rachel@pearsonpartners.com",
+    "phone": "+1 (555) 876-5432",
+    "serviceRequired": "Custom Web Development",
+    "budget": "$50,000+",
+    "message": "Need a complete enterprise portal overhaul for 5,000 global partners.",
+    "createdAt": "2026-09-13T16:31:21.036Z"
+  },
+  {
+    "id": "6c5cddcd-7b3f-42da-b1fd-449fa1e2ccc9",
+    "name": "Marcus Sterling",
+    "email": "msterling@acmeventures.com",
+    "phone": "+1 (555) 345-6789",
+    "serviceRequired": "AI Integration",
+    "budget": "$15,000 - $50,000",
+    "message": "We require custom LLM workflows integrated with our existing Jira and Slack workspace.",
+    "createdAt": "2026-09-14T16:31:21.035Z"
+  }
+]

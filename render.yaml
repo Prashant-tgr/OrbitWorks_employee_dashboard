@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: orbitworks-employee-dashboard-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: FRONTEND_URL
+        value: https://orbitworks-employee-dashboard.vercel.app
+      - key: JWT_SECRET
+        sync: false
+      - key: MONGODB_URI
+        sync: false

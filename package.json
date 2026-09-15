@@ -1,8 +1,13 @@
 {
-  "name": "employee-assistant-dashboard",
+  "name": "employee-assistant-dashboard-workspace",
   "version": "1.0.0",
-  "type": "module",
-  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
-  "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "react": "latest", "react-dom": "latest", "lucide-react": "latest", "recharts": "latest" },
-  "devDependencies": {}
+  "description": "Orbit Works Employee Dashboard with Node.js & Express Backend and React Frontend",
+  "scripts": {
+    "start": "node backend/server.js",
+    "seed": "node backend/seed.js",
+    "server": "node --watch backend/server.js",
+    "client": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  },
+  "keywords": ["react", "node", "express", "mongodb", "dashboard"]
 }

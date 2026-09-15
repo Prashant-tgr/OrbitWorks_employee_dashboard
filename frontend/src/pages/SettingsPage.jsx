@@ -3,7 +3,10 @@ import { useState } from "react";
 import Card from "../components/Card";
 import Page from "../components/Page";
 import { Avatar } from "../components/Layout";
+import { useAuth } from "../context/AuthContext";
+
 export default function SettingsPage({ theme, setTheme }) {
+  const { user } = useAuth();
   const [saved, setSaved] = useState(false);
   return (
     <Page
@@ -18,7 +21,7 @@ export default function SettingsPage({ theme, setTheme }) {
           </div>
         </div>
         <div className="profile-line">
-          <Avatar size="xl" />
+          <Avatar user={user} size="xl" />
           <button className="secondary">Change photo</button>
           <button className="bare">Remove</button>
         </div>
@@ -32,15 +35,15 @@ export default function SettingsPage({ theme, setTheme }) {
         >
           <label>
             Full name
-            <input defaultValue="Olivia Chen" />
+            <input key={user?.name} defaultValue={user?.name || "Olivia Chen"} />
           </label>
           <label>
             Email address
-            <input defaultValue="olivia.chen@orbit.com" type="email" />
+            <input key={user?.email} defaultValue={user?.email || "olivia.chen@orbit.com"} type="email" />
           </label>
           <label>
             Role
-            <input defaultValue="Product Designer" />
+            <input key={user?.role} defaultValue={user?.role ? user.role.toUpperCase() : "Product Designer"} />
           </label>
           <label>
             Department

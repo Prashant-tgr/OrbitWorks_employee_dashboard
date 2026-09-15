@@ -1,0 +1,26 @@
+[
+  {
+    "id": "9be3785e-a932-4e03-8b67-9d0babe514b3",
+    "name": "Jordan",
+    "email": "jordan@example.com",
+    "password": "$2b$10$vBfLIcgZmELM3GJDl6y8Lu9r8zP51SPQ50BZBI/PlU1V7gvw3IS7e",
+    "role": "user",
+    "createdAt": "2026-09-15T05:17:29.621Z"
+  },
+  {
+    "id": "7a3f388c-92e5-4a23-80ef-42ed2c45859f",
+    "name": "Elena Rostova",
+    "email": "employee@orbitworks.com",
+    "password": "$2b$10$0zF6I2ycVAMtT6h6WIywpeG8J2iMn2FRDkusZsa5fOv6ffeuWNaDm",
+    "role": "user",
+    "createdAt": "2026-09-15T04:31:21.031Z"
+  },
+  {
+    "id": "f548fcb3-ffa6-4224-b7a5-2d03a6100d19",
+    "name": "Orbit Administrator",
+    "email": "admin@orbitworks.com",
+    "password": "$2b$10$YR0IDMMRzzXjNmCZDuBDXe/LKMDeta94BOiW85tWF8iXqKFywIKdi",
+    "role": "admin",
+    "createdAt": "2026-09-15T04:31:20.943Z"
+  }
+]

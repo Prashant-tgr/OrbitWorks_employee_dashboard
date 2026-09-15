@@ -1,0 +1,68 @@
+[
+  {
+    "id": "a4e39063-fe58-4223-b57e-f481dbe7bef9",
+    "name": "Noah Patel",
+    "initials": "NP",
+    "role": "Frontend Developer",
+    "dept": "Engineering",
+    "email": "noah.patel@orbit.com",
+    "color": "#f9df87",
+    "status": "Offline",
+    "createdAt": "2026-09-15T05:33:28.806Z"
+  },
+  {
+    "id": "667d0562-6047-4bb7-a779-dffda5236857",
+    "name": "Ava Thompson",
+    "initials": "AT",
+    "role": "Finance Manager",
+    "dept": "Finance",
+    "email": "ava.thompson@orbit.com",
+    "color": "#f5a5bf",
+    "status": "Active",
+    "createdAt": "2026-09-15T05:33:28.806Z"
+  },
+  {
+    "id": "a5bdbc94-c3a8-4a12-84af-c2b99df666ca",
+    "name": "Liam Anderson",
+    "initials": "LA",
+    "role": "HR Specialist",
+    "dept": "People",
+    "email": "liam.anderson@orbit.com",
+    "color": "#a5dfb0",
+    "status": "Active",
+    "createdAt": "2026-09-15T05:33:28.805Z"
+  },
+  {
+    "id": "1cf56443-ae6d-49ed-b134-32771200c20f",
+    "name": "Sophia Martinez",
+    "initials": "SM",
+    "role": "Marketing Lead",
+    "dept": "Marketing",
+    "email": "sophia.martinez@orbit.com",
+    "color": "#ffc68c",
+    "status": "Away",
+    "createdAt": "2026-09-15T05:33:28.805Z"
+  },
+  {
+    "id": "f3fc591e-9904-4402-bcdb-f90494e91a83",
+    "name": "Ethan Williams",
+    "initials": "EW",
+    "role": "Senior Engineer",
+    "dept": "Engineering",
+    "email": "ethan.williams@orbit.com",
+    "color": "#80d3f4",
+    "status": "Active",
+    "createdAt": "2026-09-15T05:33:28.804Z"
+  },
+  {
+    "id": "b7850c9a-9a3e-4241-9ce4-693094984f3b",
+    "name": "Olivia Chen",
+    "initials": "OC",
+    "role": "Product Designer",
+    "dept": "Design",
+    "email": "olivia.chen@orbit.com",
+    "color": "#b9a8fd",
+    "status": "Active",
+    "createdAt": "2026-09-15T05:33:28.803Z"
+  }
+]

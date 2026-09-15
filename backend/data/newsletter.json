@@ -1,0 +1,22 @@
+[
+  {
+    "id": "5c63d351-c7e9-49b1-96a1-88a1461a03a2",
+    "email": "subscriber_1789447441973@example.com",
+    "subscribedAt": "2026-09-15T04:44:01.975Z"
+  },
+  {
+    "id": "d529ecb6-ee87-4e63-aa77-1d6f6f5cd3fd",
+    "email": "subscriber_1789446946968@example.com",
+    "subscribedAt": "2026-09-15T04:35:46.971Z"
+  },
+  {
+    "id": "aeb2ec90-5f1b-4642-b97b-78977adfe1e5",
+    "email": "newsletter.subscriber2@example.com",
+    "subscribedAt": "2026-09-13T16:31:21.037Z"
+  },
+  {
+    "id": "7fc09d0d-0e66-43ed-a431-edbb0340818d",
+    "email": "newsletter.subscriber1@example.com",
+    "subscribedAt": "2026-09-12T04:31:21.037Z"
+  }
+]

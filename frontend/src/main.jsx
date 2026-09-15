@@ -6,5 +6,6 @@ import './styles.css';
 import './extras.css';
 import './landing.css';
 import './recovery.css';
+import './auth-admin.css';
 
 createRoot(document.getElementById('root')).render(<StrictMode><App /></StrictMode>);
