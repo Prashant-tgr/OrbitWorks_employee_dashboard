@@ -153,129 +153,43 @@ MongoDB Atlas is required for persistent production data. Render's local filesys
 For Vercel, set the project Root Directory to `frontend`, Framework Preset to `Vite`, and add this environment variable for Production (and Preview if needed):
 
 ```env
-VITE_API_URL=https://<your-render-service>.onrender.com/api
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-The deployed frontend is [orbitworks-employee-dashboard.vercel.app](https://orbitworks-employee-dashboard.vercel.app/). After setting `VITE_API_URL`, redeploy Vercel so the value is included in the frontend bundle. The existing `frontend/vercel.json` keeps client-side routes working on refresh.
+3. Restart the Vite development server after changing `.env`.
+4. Open the AI Assistant page and send a message to verify the connection.
 
----
+The assistant sends the latest conversation context to Gemini and retries temporary failures such as rate limits and server errors. Chat history is stored locally in the browser under the `orbit-chat` key.
 
-## Configuring MongoDB Atlas
+### API Key Security
 
-To connect your own MongoDB Atlas database:
+This project is a frontend application, so a `VITE_` environment variable is included in the browser bundle. Do not use this setup for a production application that requires a private API key. For production, move Gemini requests to a backend or serverless function and keep the key in server-side environment variables.
 
-1. Log into your [MongoDB Atlas account](https://cloud.mongodb.com/).
-2. In your Cluster, click **Connect** -> **Drivers** (Node.js).
-3. Copy the connection string. It will look like:
-   ```text
-   mongodb+srv://<username>:<password>@cluster0.mongodb.net/orbitworks?retryWrites=true&w=majority
-   ```
-4. Open `backend/.env` (or copy `backend/.env.example` to `backend/.env`).
-5. Replace `<username>` and `<password>` with your database user credentials:
-   ```env
-   PORT=5000
-   MONGODB_URI=mongodb+srv://your_user:your_password@cluster0.mongodb.net/orbitworks?retryWrites=true&w=majority
-   JWT_SECRET=orbit_works_jwt_secret_key_2026_super_secure
-   ```
-6. Run `npm run seed` and restart your backend. Data will now sync directly to MongoDB Atlas!
+## Deployment on Vercel
 
----
+1. Push the project to a Git repository.
+2. Import the repository into Vercel.
+3. Add `VITE_GEMINI_API_KEY` under Vercel Project Settings > Environment Variables.
+4. Deploy the project.
 
-## Database Collections Schema
+The included `vercel.json` rewrites client-side routes such as `/dashboard`, `/assistant`, and `/analytics` to `index.html`, preventing 404 errors when those routes are reloaded.
 
-All four required collections are implemented:
+## Project Structure
 
-### 1. `Users`
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `id` | String / ObjectId | Unique identifier |
-| `name` | String | Full name |
-| `email` | String | Unique email (lowercase) |
-| `password` | String | Hashed using bcrypt (never stored plain) |
-| `role` | String | `'user'` or `'admin'` |
-| `createdAt` | Date / ISO String | Registration timestamp |
+```text
+src/
+  components/       Shared layout and UI components
+  data/             Employee and chart data
+  pages/            Dashboard pages and views
+  services/         Gemini API integration
+  *.css             Global, landing, responsive, and recovery styles
+```
 
-### 2. `Contacts`
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `id` | String / ObjectId | Unique identifier |
-| `name` | String | Sender name |
-| `email` | String | Sender email address |
-| `phone` | String | Sender contact number |
-| `subject` | String | Message subject |
-| `message` | String | Message content |
-| `createdAt` | Date / ISO String | Submission timestamp |
+## Available Commands
 
-### 3. `Newsletter`
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `id` | String / ObjectId | Unique identifier |
-| `email` | String | Subscriber email address (unique) |
-| `subscribedAt` | Date / ISO String | Subscription timestamp |
-
-### 4. `Quotes`
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `id` | String / ObjectId | Unique identifier |
-| `name` | String | Contact name |
-| `email` | String | Contact email address |
-| `phone` | String | Contact phone number |
-| `serviceRequired` | String | Selected service from dropdown |
-| `budget` | String | Selected budget range |
-| `message` | String | Project description / message |
-| `createdAt` | Date / ISO String | Submission timestamp |
-
----
-
-## API Reference
-
-### Contact API
-- **`POST /api/contact`**
-  - **Body**: `{ "name": "string", "email": "string", "phone": "string", "subject": "string", "message": "string" }`
-  - **Returns**: `201 Created` with confirmation message.
-
-### Authentication API
-- **`POST /api/auth/register`**
-  - **Body**: `{ "name": "string", "email": "string", "password": "string (min 6)" }`
-  - **Returns**: `201 Created` with JWT token (7-day expiry) and user object.
-- **`POST /api/auth/login`**
-  - **Body**: `{ "email": "string", "password": "string" }`
-  - **Returns**: `200 OK` with JWT token and user object.
-- **`GET /api/auth/profile`** *(Protected)*
-  - **Headers**: `Authorization: Bearer <token>`
-  - **Returns**: `200 OK` with user profile info.
-
-### Newsletter API
-- **`POST /api/newsletter/subscribe`**
-  - **Body**: `{ "email": "string" }`
-  - **Returns**: `201 Created` on new subscription.
-  - **Duplicate**: Returns `400 Bad Request` with `{ "error": "You are already subscribed" }`.
-
-### Quote Request API
-- **`POST /api/quote`**
-  - **Body**: `{ "name": "string", "email": "string", "phone": "string", "serviceRequired": "string", "budget": "string", "message": "string" }`
-  - **Returns**: `201 Created` with confirmation message.
-
-### Admin API *(Admin Protected — returns 401 if unauthorized)*
-- **`GET /api/admin/contacts`**: List all contact form submissions.
-- **`DELETE /api/admin/contacts/:id`**: Delete a contact form submission.
-- **`GET /api/admin/users`**: List all registered users (passwords omitted).
-- **`GET /api/admin/quotes`**: List all quote requests.
-- **`GET /api/admin/newsletters`**: List all newsletter subscribers.
-
----
-
-## Frontend Pages & Integration
-
-| Route | Page | Purpose |
-| :--- | :--- | :--- |
-| `/` | **Landing Page** | Features, "Get a Free Quote" modal trigger, Newsletter footer, Navbar auth state |
-| `/dashboard` | **Overview Dashboard** | Workplace overview, metrics, and shortcuts |
-| `/assistant` | **AI Assistant** | Orbit conversational AI companion |
-| `/directory` | **Employee Directory** | Team members listing and search |
-| `/analytics` | **Analytics** | Workplace velocity and activity metrics |
-| `/contact` | **Contact Page** | Functional contact form submitting to `POST /api/contact` |
-| `/login` | **Login Page** | JWT login with error banner and redirect |
-| `/register` | **Register Page** | New account creation with password hashing |
-| `/admin` | **Admin Portal** | Table views of Contacts, Quotes, Users, and Newsletter subscribers |
-| `/settings` | **Settings** | User profile view and appearance toggle |
+| Command | Description |
+| --- | --- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build |
