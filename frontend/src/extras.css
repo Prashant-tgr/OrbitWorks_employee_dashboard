@@ -454,7 +454,7 @@
     bottom: 12px !important;
 
     width: auto !important;
-    height: 68px !important;
+    height: 128px !important;
 
     padding: 5px !important;
 
@@ -476,13 +476,9 @@
     height: 100% !important;
 
     display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
     gap: 3px !important;
-  }
-
-  /* Hide Settings from bottom nav */
-  .sidebar nav button:last-child {
-    display: none !important;
   }
 
   .sidebar nav button {
@@ -495,7 +491,7 @@
     align-items: center !important;
     justify-content: center !important;
 
-    gap: 3px !important;
+    gap: 2px !important;
 
     padding: 5px 2px !important;
 
@@ -507,10 +503,9 @@
     opacity: 1 !important;
 
     font-size: 9px !important;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    line-height: 1.1 !important;
+    text-align: center;
+    white-space: normal;
   }
 
   .sidebar nav button.active {
@@ -522,7 +517,7 @@
     margin-left: 0 !important;
     width: 100% !important;
 
-    padding-bottom: 95px !important;
+    padding-bottom: 150px !important;
   }
 
   .content {
@@ -566,7 +561,7 @@
     left: 24px !important;
     right: 24px !important;
     bottom: 16px !important;
-    height: 72px !important;
+    height: 128px !important;
   }
 
   .sidebar nav button {
@@ -579,7 +574,7 @@
   }
 
   .main {
-    padding-bottom: 105px !important;
+    padding-bottom: 150px !important;
   }
 
   .content {
@@ -613,11 +608,11 @@
     left: 8px !important;
     right: 8px !important;
     bottom: 8px !important;
-    height: 64px !important;
+    height: 124px !important;
   }
 
   .main {
-    padding-bottom: 82px !important;
+    padding-bottom: 146px !important;
   }
 
   .content {
